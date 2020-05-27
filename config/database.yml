@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  user: postgres
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: grk_dev
+
+test:
+  <<: *default
+  database: grk_test
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
