@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @items = decorate_items(items: @items) if session[:drunk_mode]
   end
 
   # GET /items/1
@@ -116,6 +117,11 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def toggle_drunk_mode
+    session[:drunk_mode] = !!!session[:drunk_mode]
+    redirect_to root_path
+  end
+
 
   private
   # Use callbacks to share common setup or constraints between actions.
@@ -126,5 +132,9 @@ class ItemsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def item_params
     params.require(:item).permit(:name, :sell_in, :quality)
+  end
+
+  def decorate_items(items:)
+    items.each { |item| item.extend(Items::DrunkModeDecorator) }
   end
 end

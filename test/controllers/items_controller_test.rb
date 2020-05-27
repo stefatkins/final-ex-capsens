@@ -72,6 +72,20 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "should decrease item price by 20 percent" do
+    @item.update!(sell_in: 0, quality: 10, price: 100)
+    assert_difference ->{ @item.reload.price }, -20 do
+      get next_day_items_url
+    end
+  end
+
+  test "should not decrease item price by 20 percent" do
+    @item.update!(sell_in: 10, quality: 10, price: 100)
+    assert_difference ->{ @item.reload.price }, 0 do
+      get next_day_items_url
+    end
+  end
+
 
   # aged_brie_item
 

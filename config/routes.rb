@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get 'next_day'
+      get 'toggle_drunk_mode'
     end  
   end
 end

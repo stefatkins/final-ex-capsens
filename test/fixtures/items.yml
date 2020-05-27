@@ -4,27 +4,32 @@ default:
   name: Random Item
   sell_in: 20
   quality: 10
+  price: 20
 
 aged_brie:
   name: Aged Brie
   sell_in: 20
   quality: 10
   type: AgedBrie
+  price: 20
 
 backstage:
   name: Backstage passes to a TAFKAL80ETC concert
   sell_in: 20
   quality: 10
   type: Backstage
+  price: 20
 
 sulfuras:
   name: Sulfuras, Hand of Ragnaros
   sell_in: 20
   quality: 80
   type: Sulfuras
+  price: 20
 
 conjured:
   name: Conjured
   sell_in: 20
   quality: 10
   type: Conjured
+  price: 20

@@ -29,4 +29,5 @@
 <br>
 
 <%= link_to 'New Item', new_item_path %>
-<%= link_to 'Next Day', next_day_items_path %>
+<%= link_to 'Next Day', next_day_items_path(drunk_mode: params[:drunk_mode]) %>
+<%= link_to 'Drunk mode', toggle_drunk_mode_items_path %>
