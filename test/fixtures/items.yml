@@ -1,11 +1,30 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  sell_in: 1
-  quality: 1
+default:
+  name: Random Item
+  sell_in: 20
+  quality: 10
 
-two:
-  name: MyString
-  sell_in: 1
-  quality: 1
+aged_brie:
+  name: Aged Brie
+  sell_in: 20
+  quality: 10
+  type: AgedBrie
+
+backstage:
+  name: Backstage passes to a TAFKAL80ETC concert
+  sell_in: 20
+  quality: 10
+  type: Backstage
+
+sulfuras:
+  name: Sulfuras, Hand of Ragnaros
+  sell_in: 20
+  quality: 80
+  type: Sulfuras
+
+conjured:
+  name: Conjured
+  sell_in: 20
+  quality: 10
+  type: Conjured
